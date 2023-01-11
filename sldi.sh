@@ -52,6 +52,6 @@ else
     # Get the correct image tag based on the given format  nnnn n             
     latest_img_name=$(curl -s ${docker_registry_url} \
     | jq --arg sha_latest_img "$sha_latest_img" --arg format "$format" '.results | .[] | select(.digest==$sha_latest_img) | select(.name | startswith($format)) | .name' | tr -d '"')
-    echo "The latest image name: ${latest_img_name}. The name is stored in env under DIC_LATEST_IMG. Run using source to be able to see the stored environment variable"
-    export DIC_LATEST_IMG="${latest_img_name}"
+    echo "The latest image name: ${latest_img_name}. The name is stored in env under SLDI_LATEST_IMG. Run using source to be able to see the stored environment variable"
+    export SLDI_LATEST_IMG="${latest_img_name}"
 fi
