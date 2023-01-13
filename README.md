@@ -8,5 +8,5 @@ Usage
 -----
 
 ```bash
-source <(curl -s https://raw.githubusercontent.com/budtmo/sldi/master/sldi.sh)
+bash <(curl -s https://raw.githubusercontent.com/budtmo/sldi/master/sldi.sh)
 ```
