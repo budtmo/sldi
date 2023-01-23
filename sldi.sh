@@ -50,7 +50,7 @@ else
     docker_registry_url="https://registry.hub.docker.com/v2/repositories/library/${img}/tags"
     tmp_file="tmp-sldi.txt"
 
-    # Get the correct image tag based on the given format  nnnn n             
+    # Get the correct image tag based on the given format
     latest_img_name=${img}:$(curl -s ${docker_registry_url} \
     | jq --arg sha_latest_img "$sha_latest_img" --arg format "$format" '.results | .[] | select(.digest==$sha_latest_img) | select(.name | startswith($format)) | .name' | tr -d '"')
     echo "The latest image name: ${latest_img_name}. It is stored under ${tmp_file}"
