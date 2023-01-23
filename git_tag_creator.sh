@@ -28,5 +28,5 @@ else
 	fi
 
 	new_number=$((${array[1]}+1))
-	echo ${array[0]}${new_number}
+	echo ${array[0]}${sf}${new_number}
 fi
